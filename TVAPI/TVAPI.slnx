@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="TVAPI.Application/TVAPI.Application.csproj" />
+  <Project Path="TVAPI.Domain/TVAPI.Domain.csproj" />
+  <Project Path="TVAPI.Infrastructure/TVAPI.Infrastructure.csproj" />
+  <Project Path="TVAPI.Tests/TVAPI.Tests.csproj" />
+  <Project Path="TVAPI/TVAPI.csproj" />
+</Solution>

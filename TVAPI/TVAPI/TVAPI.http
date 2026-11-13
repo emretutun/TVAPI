@@ -1,0 +1,121 @@
+@TVAPI_HostAddress = http://localhost:5149
+
+GET {{TVAPI_HostAddress}}/health
+Accept: application/json
+
+###
+
+# Turnuvanın aktif aşaması ve haftası (1 = eski kodlardaki lig_id)
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments/1/current
+Accept: application/json
+
+###
+
+# Aktif haftanın puan durumu
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments/1/standings
+Accept: application/json
+
+###
+
+# Belirli bir haftanın puan durumu
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments/1/standings?round=5
+Accept: application/json
+
+###
+
+# Aktif haftanın maçları
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments/1/matches
+Accept: application/json
+
+###
+
+# Belirli bir haftanın maçları
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments/1/matches?round=5
+Accept: application/json
+
+###
+
+GET {{TVAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Turnuvanın aktif sezonundaki takımlar
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments/1/teams
+Accept: application/json
+
+### Takım künyesi (takım id'si /teams listesinden alınır)
+GET {{TVAPI_HostAddress}}/api/v1/soccer/teams/53
+Accept: application/json
+
+### Takım kadrosu
+GET {{TVAPI_HostAddress}}/api/v1/soccer/teams/53/players
+Accept: application/json
+
+### Tek maç: güncel skor, dakika, durum (maç id'si /matches listesinden alınır)
+GET {{TVAPI_HostAddress}}/api/v1/soccer/matches/2058099
+Accept: application/json
+
+### Maç kadroları
+GET {{TVAPI_HostAddress}}/api/v1/soccer/matches/2058099/lineups
+Accept: application/json
+
+### Maç olayları
+GET {{TVAPI_HostAddress}}/api/v1/soccer/matches/2058099/events
+Accept: application/json
+
+### Maç istatistikleri
+GET {{TVAPI_HostAddress}}/api/v1/soccer/matches/2058099/statistics
+Accept: application/json
+
+### Turnuva listesi
+GET {{TVAPI_HostAddress}}/api/v1/soccer/tournaments
+Accept: application/json
+
+### Tarihe göre maçlar (from dahil, to hariç; birden çok turnuva verilebilir)
+GET {{TVAPI_HostAddress}}/api/v1/soccer/matches?tournamentId=526&tournamentId=1&from=2026-11-10&to=2026-11-17
+Accept: application/json
+
+### Sahne şablonları: klasöre göre (directoryId birden çok kez yazılabilir)
+GET {{TVAPI_HostAddress}}/api/v1/scenes/templates?directoryId=157&directoryId=175
+Accept: application/json
+
+### Sahne şablonları: ada göre
+GET {{TVAPI_HostAddress}}/api/v1/scenes/templates?name=KELEBEK
+Accept: application/json
+
+### Tek sahne şablonu
+GET {{TVAPI_HostAddress}}/api/v1/scenes/templates/1
+Accept: application/json
+
+### Playlist'ler: kategoriye göre (categoryId birden çok kez yazılabilir)
+GET {{TVAPI_HostAddress}}/api/v1/scenes/playlists?categoryId=2&categoryId=3
+Accept: application/json
+
+### Playlist içeriği: kayıtlı sahneler ve kullandıkları şablonlar
+GET {{TVAPI_HostAddress}}/api/v1/scenes/playlists/1
+Accept: application/json
+
+### Tek kayıtlı sahne, şablonuyla
+GET {{TVAPI_HostAddress}}/api/v1/scenes/saved/1
+Accept: application/json
+
+### Hava durumu: yerler (id birden çok kez yazılabilir; cevap isteğin sırasıyla gelir)
+GET {{TVAPI_HostAddress}}/api/v1/weather/cities?id=2&id=1
+Accept: application/json
+
+### Hava durumu: tahminler (from verilmezse bugün, days verilmezse 3)
+GET {{TVAPI_HostAddress}}/api/v1/weather/forecasts?cityId=2&cityId=1&days=3
+Accept: application/json
+
+### Haber: günün yayın akışları (date verilmezse bugün)
+GET {{TVAPI_HostAddress}}/api/v1/news/rundowns
+Accept: application/json
+
+### Haber: bir akıştaki haberler (değerler akış listesinden alınır)
+GET {{TVAPI_HostAddress}}/api/v1/news/stories?date=2026-11-13&directoryId=20&timeSlotId=2
+Accept: application/json
+
+### Haber: habere bağlı kayıtlı sahneler ve şablonları
+GET {{TVAPI_HostAddress}}/api/v1/news/stories/1001/scenes
+Accept: application/json

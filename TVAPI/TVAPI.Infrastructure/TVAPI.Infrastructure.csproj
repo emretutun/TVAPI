@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\TVAPI.Application\TVAPI.Application.csproj" />
+    <ProjectReference Include="..\TVAPI.Domain\TVAPI.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.89" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.15" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.15" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.15" />
+    <PackageReference Include="MySqlConnector" Version="3.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- Test projesi internal sınıfları görebilsin diye; başka hiçbir proje göremez. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="TVAPI.Tests" />
+  </ItemGroup>
+
+</Project>
